@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Startup</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("e_4oB9yH_YnEz5DZs");
+        })();
+        
+        function sendEmail(e) {
+            e.preventDefault();
+            emailjs.sendForm('service_6su4l0c', 'template_w5jeo2n', event.target)
+                .then(function() {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send message: ' + JSON.stringify(error));
+                });
+        }
+    </script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">DesignCo</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+        
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to DesignCo</h1>
+            <p>Your dream space, designed to perfection</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At DesignCo, we believe in transforming spaces to reflect your unique style and personality. Our team of experienced designers is dedicated to creating stunning interiors that inspire and delight.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service1">
+            <h3>Residential Design</h3>
+            <p>Create a cozy and stylish home environment tailored to your tastes.</p>
+        </div>
+        <div class="service2">
+            <h3>Commercial Design</h3>
+            <p>Enhance your business space with modern and functional designs.</p>
+        </div>
+        <div class="service3">
+            <h3>Consultation</h3>
+            <p>Get expert advice on how to best utilize your space and resources.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" onsubmit="sendEmail(event)" action="https://formspree.io/f/mbjnvnpy">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="query">Your Query:</label>
+            <textarea id="query" name="query" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <div class="contact-info">
+            <p>Email: info@designco.com</p>
+            <p>Phone: 7894812255</p>
+            <p>Address: 123 Design St, Creativity City, CO 12345</p>
+        </div>
+    </footer>
+</body>
+</html>
